@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" href="css/bootstrap-tokenfield.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+    <link rel="stylesheet" href="css/chosen.min.css">
+    <link rel="stylesheet" href="css/bootstrap-chosen.css">
+    <style>
+      .monq-verylight {
+        color: #D5DDED !important;
+      }
+      #page-header li .monq-light :hover {
+        color: #DEF5FA !important;
+      }
+      #page-footer .monq-verylight {
+        color: #96A4C0 !important;
+      }
+      #page-footer .monq-verylight a{
+        color: #3FA898 !important;
+      }
+      #page-footer .monq-verylight a:hover{
+        text-decoration: none;
+        color: #87BFC7 !important;
+      }
+      .credits-outer .monq-verylight {
+        color: #515967 !important;
+      }
+      .monq-light {
+        color: #BEC6D5 !important;
+      }
+      #page-header {
+        background-color: #36274b;
+        background-color: #56316F;
+        border: none;
+      }
+      #page-header.navbar {
+        margin-bottom: 0px;
+      }
+      #page-sticky-navbar {
+        border: none;
+        margin-bottom: 40px;
+      }
+      .navbar {
+        border-radius: 0px;
+      }
+      .navbar-brand-title {
+        font-size: 30px;
+      }
+      .navbar-brand-img {
+        padding: 0px 15px;
+      }
+      .navbar-logo {
+        /*padding: 18px 0px;*/
+        padding-top: 18px;
+        margin-bottom: 18px;
+      }
+      .navbar-left .navbar-btn.bleft{
+        margin-left: 5px;
+      }
+      .navbar-left .navbar-btn.bright{
+        margin-right: 5px;
+      }
+      p.tagline {
+        margin-left: 30px !important;
+      }
+      #page-footer {
+        background-color: #E5E5E5;
+        background-color: #100f18;
+        margin-top: 25px;
+      }
+      #page-footer .container-top {
+        padding: 20px 0px;
+      }
+      ul.footer-links {
+        margin-bottom: 0px;
+      }
+      ul.footer-links li {
+        padding: 0px 15px;
+      }
+      .footer-img {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+      p.credits {
+        
+      }
+      .social-icons {
+        margin-top: 15px;
+      }
+      .social-icons li {
+        margin-left: 4px;
+        margin-left: 4px;
+      }
+      .social-icon {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+      }
+      .social-icon.facebook {
+        background-image: url("img/webicon-facebook.svg");
+      }
+      .social-icon.twitter {
+        background-image: url("img/webicon-twitter.svg");
+      }
+      .social-icon.googleplus {
+        background-image: url("img/webicon-googleplus.svg");
+      }
+      .social-icon.github {
+        background-image: url("img/webicon-github.svg");
+      }
+      
+      .snippet-fieldset-top {
+        margin-bottom: 15px;
+      }
+      
+      .snippet-fieldset-middle {
+        
+      }
+      
+      .snippet-fieldset-bottom {
+        margin-top: 15px;
+      }
+      
+      /* Snippet-Content (Ace Editor) */
+      #snippet-content {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        font-size: 16px;
+      }
+      
+      #snippet-submit-button {
+        margin-top: 15px;
+      }
+      
+      /* Chosen Styles */
+      #snippet_language_chosen {
+        width: 200px !important;
+      }
+      #snippet_font_size_chosen {
+        width: 130px !important;
+      }
+      #snippet_theme_chosen {
+        width: 200px !important;
+      }
+      
+      /* Override 'Bootstrap-Chosen's theme. */
+      .chosen-container-single .chosen-single {
+        background: none;
+      }
+      
+      .chosen-container-active.chosen-with-drop .chosen-single {
+        background-image: none;
+      }
+      
+      hr.fancy-hr {
+        height: 12px;
+        border: 0;
+        box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+        margin: 0px 0px;
+      }
+      
+      @media(max-width:450px) {
+        .tagline {
+          clear: both;
+          display: block;
+          text-align: center;
+          margin: 0px auto;
+          padding-top: 15px;
+          padding-bottom: 10px;
+        }
+      }
+      
+      @media(max-width:650px) {
+        .navbar-webpage {
+          display: none;
+        }
+      }
+      
+      @media(max-width:767px){
+        p.tagline em {
+          padding: 0px 15px;
+        }
+        p.tagline {
+          display: none;
+        }
+        #snippet-top-font-theme {
+          float: none !important;
+          margin-top: 0px !important;
+        }
+        #snippet_font_size_chosen {
+          float: none !important;
+          width: 100% !important;
+          margin-top: 20px;
+        }
+        #snippet_theme_chosen {
+          float: none !important;
+          width: 100% !important;
+          margin-top: 20px;
+        }
+        #snippet_language_chosen {
+          float: none !important;
+          width: 100% !important;
+          margin-top: 20px;
+        }
+        .snippet-tags-label {
+          text-align: right;
+          margin-bottom: 0px;
+          margin-top: 6px;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+        .snippet-visibility-group {
+          float: none !important;
+          text-align: center;
+          margin-top: 15px;
+        }
+      }
+      @media(min-width:768px){
+        .login-button {
+          margin-right: 0px;
+        }
+        p.tagline {
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+        .social-icons li {
+          margin-left: 12px;
+        }
+        .social-icon {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+      @media(min-width:992px){}
+      @media(max-width:992px){
+        .snippet-tags-label {
+          text-align: center !important;
+          margin-bottom: 15px !important;
+          padding-top: 0px !important;
+        }
+        .social-icon {
+          width: 36px;
+          height: 36px;
+          line-height: 36px;
+        }
+      }
+      @media(min-width:1200px){}
+      
+      /* Custom Media Queries */
+      @media(max-width:991px){
+        #snippet-top-font-theme {
+          float: none !important;
+          margin-top: 15px;
+        }
+        #snippet_theme_chosen {
+          float: right;
+        }
+        #snippet_language_chosen {
+          float: right;
+        }
+      }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Header Navbar -->
+    <nav id="page-header" class="navbar navbar-default" role="navigation">
+      <div class="container navbar-logo">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#page-header-dropdown">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-webpage navbar-brand navbar-brand-title monq-verylight">
+            monq
+          </a>
+          <a href="#" class="navbar-brand navbar-brand-img">
+            <img class="" src="img/logo.png" alt="monq logo" width="79" height="50">
+          </a>
+
+          <p class="navbar-text navbar-left tagline monq-light"><em>Code snippets with Green Tea!</em></p>
+        </div> <!--/.navbar-header -->
+        
+        <div class="collapse navbar-collapse" id="page-header-dropdown">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="monq-light" href="#"><strong>Home</strong></a></li>
+            <li><a class="monq-light" href="#"><strong>About</strong></a></li>
+            <li><a class="monq-light" href="#"><strong>FAQ</strong></a></li>
+          </ul>
+        </div> <!--/.navbar-collapse -->
+        
+      </div>
+    </nav> <!--/.page-header -->
+    <!-- /Header Navbar -->
+    
+    <!-- Sticky Navbar -->
+    <nav id="page-sticky-navbar" class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="nav navbar-nav navbar-left text-center">
+          <button class="btn btn-success navbar-btn bright">New Snippet</button>
+          <button class="btn btn-default navbar-btn bleft">Popular Snippets</button>
+        </div>
+        
+        <form action="." class="navbar-form navbar-left col-md-offset-3 text-center" role="search">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search Snippets">
+              <span class="input-group-addon">
+                <i class="fa fa-search"></i>
+              </span>
+            </div>
+          </div>
+          <!--button type="submit" class="btn btn-default">Search</button-->
+        </form>
+        
+        <ul class="nav navbar-nav navbar-right text-center login-button">
+          <button class="btn btn-default navbar-btn">Sign In / Sign Up</button>
+        </ul>
+      </div>
+    </nav>
+    <!-- /Sticky Navbar -->
+    
+    
+    <!-- Page Main -->
+    <div id="page-main">
+      <div class="container">
+        
+       <!-- Snippet Form -->
+        <form action="." method="POST" novalidate="novalidate">
+          <fieldset class="snippet-fieldset-top">
+            <!-- Top Row -->
+            <div class="row">
+            
+              <div class="col-md-6 col-sm-12">
+                <div class="form-inline">
+                  <label for="snippet-title" class="sr-only">Title</label>
+                  <input type="text" class="form-control" id="snippet-title" placeholder="Name this Snippet." name="title">
+                  
+                  <select name="language" id="snippet-language" class="form-control" data-placeholder="Language">
+                    <option value="" disabled="disabled" selected="selected" style="display:none;">Language</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="col-md-6 col-sm-12">
+                <div id="snippet-top-font-theme" class="form-inline pull-right">
+                  <select name="snippet-font-size" id="snippet-font-size" class="form-control" data-placeholder="Font Size">
+                    <option value="" disabled="disabled" selected="selected" style="display:none;">Font Size</option>
+                    <option value="12px">12px</option>
+                    <option value="14px">14px</option>
+                    <option value="16px">16px</option>
+                    <option value="18px">18px</option>
+                  </select>
+                  
+                  <select name="theme" id="snippet-theme" class="form-control" data-placeholder="Editor Theme">
+                    <option value="" disabled="disabled" selected="selected" style="display:none;">Editor Theme</option>
+                  </select>
+                </div>
+              </div>
+              
+            </div>
+            <!-- /Top Row -->
+          </fieldset>
+          
+          <!-- Ace Editor Row -->
+          <fieldset class="snippet-fieldset-middle">
+            <div class="row">
+              <div class="col-md-12">
+                <div id="snippet-content" class="" name="content">
+// My awesome JavaScript program.
+
+var message = &quot;Hello, World of Web Apps!&quot;;
+
+for(var i = 0; i &lt; 10; i++) {
+    console.log(i + &quot; &quot; + message);
+}
+
+// Try it out! :)
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- Ace Editor Row -->
+          
+          <fieldset class="snippet-fieldset-bottom">
+            
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 form-horizontal">
+                <div class="form-group">
+                  <label for="snippet-tags" class="col-md-4 col-sm-12 col-xs-12 control-label snippet-tags-label">Tags:</label>
+                  <div class="col-md-8 col-sm-12 col-xs-12">
+                    <input type="text" class="form-control" id="snippet-tags" placeholder="Tags are separated by commas.">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6"></div>
+              
+              <div class="col-md-6 col-sm-12 col-xs-12"> <!-- col-md-6 -->
+                <div class="form-inline pull-right snippet-visibility-group ">
+                  <div class="form-group">
+                    <label for="snippet-tags" class="control-label">Make this Snippet</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="checkbox" id="snippet-visibility-check" name="snippet-visibility-check" data-toggle="toggle" data-on="Private" data-off="Public" data-onstyle="warning">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="snippet-visibility" name="visibility" placeholder="password" disabled>
+                  </div>
+                </div>
+              </div> <!-- /col-md-6 -->
+            </div> <!--/row-->
+            
+            <div class="row"> <!-- row -->
+              <div class="col-md-9"></div>
+              
+              <div class="col-md-3 col-xs-12">
+                <div class="form-group">
+                  <button id="snippet-submit-button" type="submit" class="btn btn-primary btn-lg btn-block">Save Snippet</button>
+                </div>
+              </div>
+            </div> <!-- /row -->
+            
+          </fieldset>
+          
+        </form>
+        <!-- /Snippet Form -->
+        
+      </div>
+    </div>
+    <!-- /Page Main -->
+    
+    
+    <!-- Page Footer -->
+    <footer id="page-footer">
+    
+      <div class="container container-top">
+      
+        <div class="row">
+          <div class="md-col-12 text-center">
+            <ul class="list-inline footer-links">
+              <li><a class="monq-verylight" href="#"><h4><strong>Home</strong></h4></a></li>
+              <li><a class="monq-verylight" href="#"><h4><strong>About</strong></h4></a></li>
+              <li><a class="monq-verylight" href="#"><h4><strong>FAQ</strong></h4></a></li>
+              <li><a class="monq-verylight" href="#"><h4><strong>Contact</strong></h4></a></li>
+            </ul>
+          </div>
+        </div> <!-- /row -->
+        <div class="text-center">
+          <img class="footer-img" src="img/logo.png" alt="monq logo" width="" height="60">
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12 text-center monq-verylight">
+            <p>Made with <a href="http://www.djangoproject.com/" target="_blank"><strong>Django</strong></a>, <a href="http://www.getbootstrap.com/" target="_blank"><strong>Bootstrap</strong></a> and lots of <a href="http://www.cracked.com/blog/7-scientific-ways-coffee-gives-you-super-powers/" target="_blank"><strong>Coffee</strong></a>!</p>
+          </div>
+        </div> <!-- /row -->
+        
+        <ul class="social-icons list-inline text-center">
+          <li><a href="#" class="social-icon facebook wobble-to-top-right"></a></li>
+          <li><a href="#" class="social-icon twitter buzz-out"></a></li>
+          <li><a href="#" class="social-icon googleplus wobble-vertical"></a></li>
+          <li><a href="#" class="social-icon github wobble-to-bottom-right"></a></li>
+        </ul>
+      </div> <!-- /container -->
+      
+      <hr class="fancy-hr">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 text-center credits-outer">
+            <p class="credits monq-verylight">Designed and developed by <a href="http://smallcode.me" target="_blank"><strong>Sandeep Jadoonanan</strong></a> &copy; <span class="year"></span>.</p>
+          </div>
+        </div>    
+      </div> <!-- /container -->
+      
+    </footer>
+    <!-- /Page Footer -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="application/octet-stream" src="js/underscore-min.map"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-tokenfield.min.js"></script>
+    <script type="application/octet-stream" src="js/bootstrap-toggle.min.js.map"></script>
+    <script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="js/ace/ace.js"></script>
+    <script type="text/javascript" src="js/ace/ext-modelist.js"></script>
+    <script type="text/javascript" src="js/ace/ext-themelist.js"></script>
+    <script type="text/javascript">
+      
+      // Dynamic dates!
+      $(document).ready(function() {
+        var d = new Date();
+        $(".credits .year").text(d.getFullYear());
+      });
+      
+      // Random Taglines!
+      $(document).ready(function() {
+        var taglines = [
+          "Code snippets are the future!",
+          "Just click, type and share!",
+          "An awesome web app!",
+          "Code snippets with Green Tea!",
+          "Made with eco-friendly technologies :)",
+          "Snippets are made with bagels and butter!",
+          "Become a code Jedi!",
+        ];
+        // Ensure that the same tagline does not get repeated consecutively.
+        setInterval(function() {
+          var f = "slow"
+          $("p.tagline").fadeOut(f, function() {
+            var currentTagline = $("p.tagline em").text();
+            var newTaglines = _.without(taglines, currentTagline);
+            currentTagline = newTaglines[_.random(0, newTaglines.length - 1)];
+            $("p.tagline em").text(currentTagline);
+            $("p.tagline").fadeIn(f);
+          });
+        }, 10000);
+      });
+      
+    </script>
+    
+    <script type="text/javascript">
+      // Snippet privacy options.
+      $(document).ready(function() {
+        
+        $("#snippet-visibility-check").change(function() {
+          if($(this).is(":checked"))
+            $("#snippet-visibility").attr("disabled", false);
+          else {
+            $("#snippet-visibility").attr("disabled", "disabled")
+            $("#snippet-visibility").val("");
+          }
+        });
+        
+      });
+    </script>
+    
+    <script type="text/javascript">
+    
+    // Set up the editor's language choices.
+    function editorModes() {
+      var modes = ace.require("ace/ext/modelist");
+      
+      // Build 'Editor Mode' options.
+      _.each(modes.modes, function(element, index) {
+        $("#snippet-language").append($("<option/>").attr({"value": element.name}).text(element.caption));
+      });
+    }
+    
+    // Set up the editor's theme choices.
+    function editorThemes() {
+      var themes = ace.require("ace/ext/themelist");
+      
+      _.each(themes.themes, function(element, index) {
+        $("#snippet-theme").append($("<option/>").attr({"value": element.name}).text(element.caption));
+      });
+    }
+    
+    // Build the ui.
+    $(document).ready(function() {
+      
+      var editor = ace.edit("snippet-content");
+      editor.setTheme("ace/theme/ambiance");
+      editor.getSession().setMode("ace/mode/javascript");
+      
+      editorModes();
+      editorThemes();
+      
+      ///------
+      /// Set the current theme and mode in ui.
+      // var currentTheme = "ambiance";
+      // $("#snippet-theme").val(currentTheme);
+      // var currentMode = "javascript";
+      // $("#snippet-language").val(currentMode);
+      ///------
+      
+      // Add listener to 'snippet-language'.
+      $("#snippet-language").change(function() {
+        var changed = $(this).find("option:selected");
+        console.log("Mode has changed to " + changed.text());
+        
+        editor.getSession().setMode("ace/mode/" + changed.val());
+      });
+      
+      // Add listener to 'snippet-theme'.
+      $("#snippet-theme").change(function() {
+        var changed = $(this).find("option:selected");
+        console.log("Theme has changed to " + changed.text());
+        
+        editor.setTheme("ace/theme/" + changed.val());
+      });
+      
+      // Add listener to 'snippet-font-size'.
+      $("#snippet-font-size").change(function() {
+        var changed = $(this).find("option:selected");
+        console.log("Font size has changed to " + changed.text());
+        
+        $("#snippet-content").css({"font-size": changed.text()});
+      });
+      
+    });
+    
+    // Initialize 'chosen' selectboxes and 'bootstrap-tokenfield' inputs.
+    $(document).ready(function() {
+      var noResultsTxt = "Nothing to show.";
+      $("#snippet-language").chosen({no_results_text: noResultsTxt});
+      $("#snippet-theme").chosen({no_results_text: noResultsTxt});
+      $("#snippet-font-size").chosen({no_results_text: noResultsTxt});
+      
+      // Snippet-tags Tokenfield.
+      $("#snippet-tags").tokenfield({
+        limit: 10,
+        //tokens: ["monq!"]
+      });
+    });
+      
+    </script>
+    
+  </body>
+</html>
